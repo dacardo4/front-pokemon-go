@@ -1,17 +1,17 @@
 <div class="container">
   <div class="lateral-bar">
     <div class="lateral-bar-option">
-      <button>
+      <button [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [routerLink]="['pokemonList']">
         New
       </button>
     </div>
     <div class="lateral-bar-option">
-      <button>
+      <button [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [routerLink]="['availableOnGame']">
         Ava
       </button>
     </div>
     <div class="lateral-bar-option">
-      <button>
+      <button [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [routerLink]="['registered']">
         Use
       </button>
     </div>
