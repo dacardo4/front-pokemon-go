@@ -15,3 +15,8 @@ export class pokemonInList {
   idRegistro: number = 0;
   nombre: string = '';
 }
+
+export class allPokemonInApi {
+  url: string = '';
+  name: string = '';
+}
