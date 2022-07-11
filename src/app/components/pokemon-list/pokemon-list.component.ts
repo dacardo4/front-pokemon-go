@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Apollo } from 'apollo-angular';
+import { pokemonInList, QUERY_ALL_POKEMON_LIST } from './pokemon-list.querys';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokemonListComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private _apollo: Apollo
+  ) { }
+
+  pokemonList: pokemonInList[] = [];
 
   ngOnInit(): void {
+    this._apollo.query({
+      query: QUERY_ALL_POKEMON_LIST,
+    }).subscribe((result: any) => {
+      console.log(result);
+      this.pokemonList = result?.data?.pokemonList;
+    });
   }
 
 }

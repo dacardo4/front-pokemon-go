@@ -1,1 +1,5 @@
-<p>pokemon-list works!</p>
+<div *ngIf="pokemonList">
+  <div *ngFor="let pokemon of pokemonList">
+    <p>{{ pokemon.id }}: {{ pokemon.idRegistro }} {{ pokemon.nombre }}</p>
+  </div>
+</div>
