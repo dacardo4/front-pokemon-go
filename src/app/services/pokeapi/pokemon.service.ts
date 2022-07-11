@@ -11,10 +11,16 @@ export class PokemonService {
     private _httpService: DataServicesService,
   ) { }
 
-  private localUrl: string = `pokemon/1`;
+  private localUrl: string = `pokemon/`;
 
   getOnePokemonByID(id: number): Observable<any> {
     let url: string = `${this.localUrl}`;
     return this._httpService.httpGet(url+id);
   }
+
+  getAllPokemonList(): Observable<any> {
+    let url: string = `${this.localUrl}`;
+    return this._httpService.httpGet(`${url}?limit=1500`);
+  }
+
 }
