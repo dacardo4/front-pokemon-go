@@ -25,11 +25,11 @@ export class PokemonListComponent implements OnInit {
   ngOnInit(): void {
     //this.getPokemonByIDinAPI();
     this.getAllPokemonFromAPI();
-    let e = this;
-    const interval = setInterval(function() {
-      e.indexAPI++;
-      e.pokemonSelected = e.pokemonListAPI[e.indexAPI];
-    }, 1500);
+    // let e = this;
+    // const interval = setInterval(function() {
+    //   e.indexAPI++;
+    //   e.pokemonSelected = e.pokemonListAPI[e.indexAPI];
+    // }, 1500);
   }
 
   getPokemonByIDinAPI(): void {
