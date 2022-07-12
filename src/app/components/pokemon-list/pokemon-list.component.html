@@ -1,5 +1,22 @@
-<div *ngIf="pokemonList">
-  <div *ngFor="let pokemon of pokemonList">
-    <p>{{ pokemon.id }}: {{ pokemon.idRegistro }} {{ pokemon.nombre }}</p>
+<div>
+  <div>
+    <button (click)="indexMinus()">-</button>
+    <input [(ngModel)]="indexAPI" type="number">
+    <button (click)="indexPlus()">+</button>
+    <button (click)="indexPlus()">Seleccionar</button>
+  </div>
+
+  <div *ngIf="pokemonListAPI.length > 0">
+    <p>{{ pokemonSelected.name }}: {{ pokemonSelected.url }}</p>
+    <app-pokeapi-pokemonData
+      [dataPokemonReceived]="pokemonSelected"
+    ></app-pokeapi-pokemonData>
   </div>
 </div>
+
+
+<!-- <div *ngIf="pokemonListAPI">
+  <div *ngFor="let pokemon of pokemonListAPI">
+    <p>{{ pokemon.name }}: {{ pokemon.url }}</p>
+  </div>
+</div> -->
