@@ -10,6 +10,8 @@ import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonDataComponent } from './components/shared/pokeapi/pokemon-data/pokemon-data.component';
 import { FormsModule } from '@angular/forms';
+import {MatTableModule} from '@angular/material/table';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     GraphQLModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

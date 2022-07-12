@@ -11,6 +11,11 @@ import { take } from 'rxjs/operators';
 })
 export class PokemonListComponent implements OnInit {
 
+  displayedColumns: string[] = ['rowNumber', 'position', 'name', 'weight'];
+  //dataSource = ELEMENT_DATA;
+
+
+
   indexAPI: number = 0;
   constructor(
     private _apollo: Apollo,
@@ -23,8 +28,9 @@ export class PokemonListComponent implements OnInit {
   pokemonSelected: allPokemonInApi = new allPokemonInApi();
 
   ngOnInit(): void {
+    this.getAllPokemonInDB();
     //this.getPokemonByIDinAPI();
-    this.getAllPokemonFromAPI();
+    //this.getAllPokemonFromAPI();
     // let e = this;
     // const interval = setInterval(function() {
     //   e.indexAPI++;
@@ -53,14 +59,14 @@ export class PokemonListComponent implements OnInit {
       }
     );
   }
-  // getAllPokemonInDB(): void {
-  //   this._apollo.query({
-  //     query: QUERY_ALL_POKEMON_LIST,
-  //   }).subscribe((result: any) => {
-  //     console.log(result);
-  //     this.pokemonList = result?.data?.pokemonList;
-  //   });
-  // }
+  getAllPokemonInDB(): void {
+    this._apollo.query({
+      query: QUERY_ALL_POKEMON_LIST,
+    }).subscribe((result: any) => {
+      console.log(result);
+      this.pokemonList = result?.data?.pokemonList;
+    });
+  }
 
   indexMinus(): void {
     console.log('enter',this.indexAPI);
