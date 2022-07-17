@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PokemonDataComponent } from './components/shared/pokeapi/pokemon-data/pokemon-data.component';
 import { FormsModule } from '@angular/forms';
 import {MatTableModule} from '@angular/material/table';
+import { PokemonListCreateComponent } from './components/pokemon-list-create/pokemon-list-create.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {MatTableModule} from '@angular/material/table';
     PokemonListComponent,
     PokemonAvailableOnGameComponent,
     PokemonRegisteredOnGameComponent,
-    PokemonDataComponent
+    PokemonDataComponent,
+    PokemonListCreateComponent
   ],
   imports: [
     BrowserModule,

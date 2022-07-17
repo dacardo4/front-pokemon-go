@@ -1,0 +1,15 @@
+<div>
+    <div>
+      <button (click)="indexMinus()">-</button>
+      <input [(ngModel)]="indexAPI" type="number">
+      <button (click)="indexPlus()">+</button>
+      <button (click)="indexPlus()">Seleccionar</button>
+    </div>
+  
+    <div *ngIf="pokemonListAPI.length > 0">
+      <p>{{ pokemonSelected.name }}: {{ pokemonSelected.url }}</p>
+      <app-pokeapi-pokemonData
+        [dataPokemonReceived]="pokemonSelected"
+      ></app-pokeapi-pokemonData>
+    </div>
+  </div>

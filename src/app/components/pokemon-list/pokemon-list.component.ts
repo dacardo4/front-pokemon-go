@@ -11,54 +11,18 @@ import { take } from 'rxjs/operators';
 })
 export class PokemonListComponent implements OnInit {
 
-  displayedColumns: string[] = ['rowNumber', 'position', 'name', 'weight'];
-  //dataSource = ELEMENT_DATA;
+  displayedColumns: string[] = ['rowNumber', 'IDDB', 'PokedexIndex', 'Nombre'];
 
-
-
-  indexAPI: number = 0;
   constructor(
     private _apollo: Apollo,
-    private _pokemonService: PokemonService,
-    
   ) { }
 
   pokemonList: pokemonInList[] = [];
-  pokemonListAPI: allPokemonInApi[] = [];
-  pokemonSelected: allPokemonInApi = new allPokemonInApi();
 
   ngOnInit(): void {
     this.getAllPokemonInDB();
-    //this.getPokemonByIDinAPI();
-    //this.getAllPokemonFromAPI();
-    // let e = this;
-    // const interval = setInterval(function() {
-    //   e.indexAPI++;
-    //   e.pokemonSelected = e.pokemonListAPI[e.indexAPI];
-    // }, 1500);
   }
 
-  getPokemonByIDinAPI(): void {
-    this._pokemonService.getOnePokemonByID(1).pipe(take(1)).subscribe(
-      data => {
-        console.log(data);
-        this.pokemonList = data;
-      }, error => {
-        console.log('getPokemonByIDinAPI Error: ',error);
-      }
-    );
-  }
-  getAllPokemonFromAPI(): void {
-    this._pokemonService.getAllPokemonList().pipe(take(1)).subscribe(
-      data => {
-        console.log(data);
-        this.pokemonListAPI = data.results;
-        this.pokemonSelected = this.pokemonListAPI[this.indexAPI];
-      }, error => {
-        console.log('getAllPokemonFromAPI Error: ',error);
-      }
-    );
-  }
   getAllPokemonInDB(): void {
     this._apollo.query({
       query: QUERY_ALL_POKEMON_LIST,
@@ -66,18 +30,6 @@ export class PokemonListComponent implements OnInit {
       console.log(result);
       this.pokemonList = result?.data?.pokemonList;
     });
-  }
-
-  indexMinus(): void {
-    console.log('enter',this.indexAPI);
-    console.log('validator',this.indexAPI == 0);
-    
-    this.indexAPI = this.indexAPI == 0 ? 0 : (this.indexAPI-1);
-    console.log('salida',this.indexAPI);
-  }
-  indexPlus(): void {
-    this.indexAPI++;
-    this.pokemonSelected = this.pokemonListAPI[this.indexAPI];
   }
 
 }
