@@ -14,6 +14,8 @@ import { PokemonListCreateComponent } from './components/pokemon-list-create/pok
 
 import {MatTableModule} from '@angular/material/table';
 import {MatSelectModule} from '@angular/material/select';
+import {MatCardModule} from '@angular/material/card';
+
 import { PokemonAvailableOnGameCreateComponent } from './components/pokemon-available-on-game-create/pokemon-available-on-game-create.component';
 
 @NgModule({
@@ -34,6 +36,7 @@ import { PokemonAvailableOnGameCreateComponent } from './components/pokemon-avai
     FormsModule,
     MatTableModule,
     MatSelectModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
