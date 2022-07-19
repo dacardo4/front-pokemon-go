@@ -17,6 +17,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatCardModule} from '@angular/material/card';
 
 import { PokemonAvailableOnGameCreateComponent } from './components/pokemon-available-on-game-create/pokemon-available-on-game-create.component';
+import { PokemonAvailableComponent } from './components/shared/cards/pokemon-available/pokemon-available.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PokemonAvailableOnGameCreateComponent } from './components/pokemon-avai
     PokemonRegisteredOnGameComponent,
     PokemonDataComponent,
     PokemonListCreateComponent,
-    PokemonAvailableOnGameCreateComponent
+    PokemonAvailableOnGameCreateComponent,
+    PokemonAvailableComponent
   ],
   imports: [
     BrowserModule,
