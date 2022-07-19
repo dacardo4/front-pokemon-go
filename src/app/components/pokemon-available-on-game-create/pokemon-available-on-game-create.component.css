@@ -1,0 +1,8 @@
+.section {
+    width: 100%;
+    display: flex;
+  }
+  .sectionPart {
+    width: 50%;
+    height: 20%;
+  }

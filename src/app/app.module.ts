@@ -10,9 +10,11 @@ import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonDataComponent } from './components/shared/pokeapi/pokemon-data/pokemon-data.component';
 import { FormsModule } from '@angular/forms';
-import {MatTableModule} from '@angular/material/table';
 import { PokemonListCreateComponent } from './components/pokemon-list-create/pokemon-list-create.component';
 
+import {MatTableModule} from '@angular/material/table';
+import {MatSelectModule} from '@angular/material/select';
+import { PokemonAvailableOnGameCreateComponent } from './components/pokemon-available-on-game-create/pokemon-available-on-game-create.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { PokemonListCreateComponent } from './components/pokemon-list-create/pok
     PokemonAvailableOnGameComponent,
     PokemonRegisteredOnGameComponent,
     PokemonDataComponent,
-    PokemonListCreateComponent
+    PokemonListCreateComponent,
+    PokemonAvailableOnGameCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,8 @@ import { PokemonListCreateComponent } from './components/pokemon-list-create/pok
     GraphQLModule,
     HttpClientModule,
     FormsModule,
-    MatTableModule
+    MatTableModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

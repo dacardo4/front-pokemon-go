@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="section">
+    <div class="sectionPart">
+      <input type="number" [(ngModel)]="inputFinderPokemon" (keyup.enter)="searchPokemon()">
+      <ng-container *ngIf="pokemonSelected">
+        <span><b>ID:</b> {{ pokemonSelected.idRegistro }}</span>
+        <span><b>Nombre:</b> {{ pokemonSelected.nombre }}</span>
+      </ng-container>
+    </div>
+    <div class="sectionPart">
+      <select name="select" [(ngModel)]="formSelected">
+        <option *ngFor="let form of formList" [ngValue]="form">{{ form.form }}</option>
+      </select>
+    </div>
+  </div>
+  <div class="section">
+    <div class="sectionPart">dataToSaveManual
+      <br>
+      {{ formSelected | json }}
+      <br>
+      {{ pokemonSelected | json }}
+    </div>
+  </div>
+  <div class="section">
+    <!-- <div class="sectionPart">dataToSaveAutomatic
+      <br>
+      {{ formSelected | json }}
+      <br>
+      {{ pokemonSelected | json }}
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div *ngFor="let item of allDataLoaded">
+        <div *ngFor="let item2 of item.pokemon_v2_pokemonspecies">
+          {{ item2.order }} -- {{ item2.name }} -- {{ item2.evolves_from_species_id }}
+        </div>
+        <br><br><br><br><br>
+      </div>
+    </div> -->
+  </div>
+</div>
