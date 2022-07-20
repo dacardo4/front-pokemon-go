@@ -1,10 +1,17 @@
 <mat-card class="example-card">
   <mat-card-title-group>
-    <mat-card-title>{{ pokemon.pokemonData.nombre }}</mat-card-title>
-    <mat-card-subtitle>{{ pokemon.form.form }}</mat-card-subtitle>
-    <img mat-card-sm-image src="{{ urlImage(pokemon.idPokemon) }}" >
+    <mat-card-title><b>{{ pokemon?.idPokemon }}</b> {{ pokemon?.pokemonData?.nombre }}</mat-card-title>
+    <mat-card-subtitle>{{ pokemon?.form?.form }}</mat-card-subtitle>
+    <img mat-card-sm-image src="{{ urlImage(pokemon?.idPokemon) }}" >
   </mat-card-title-group>
   <mat-card-content>
-    Text
+    <div><b>DB</b> {{ pokemon?.id }}</div>
+    <div>
+      <b>Evolved From</b> {{ pokemon?.evolvedFrom }}
+      <input class="inputEvolutionFrom" type="number" min="1" max="1100" (keyup.enter)="updateEvolvedFrom()" [(ngModel)]="newEvolvedFrom">
+      <button mat-mini-fab color="warn" aria-label="delete evolFrom" (click)="deleteEvolvedFrom()">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
   </mat-card-content>
 </mat-card>
